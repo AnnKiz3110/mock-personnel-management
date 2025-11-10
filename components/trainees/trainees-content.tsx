@@ -24,7 +24,7 @@ export function TraineesContent() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-balance">Danh sách học việc</h2>
+          <h2 className="text-2xl font-bold text-balance">Danh sách nhân viên học việc</h2>
           <p className="mt-1 text-sm text-muted-foreground">Quản lý và theo dõi tất cả nhân viên học việc</p>
         </div>
         <Button className="bg-[#2c86ff] hover:bg-[#1568db]" onClick={() => setAddDialogOpen(true)}>

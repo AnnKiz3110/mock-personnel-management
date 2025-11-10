@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
+import { useSidebar } from "@/lib/sidebar-context"
 import { LayoutDashboard, Users, FileText, Settings } from "lucide-react"
 
 const menuItems = [
@@ -12,7 +13,7 @@ const menuItems = [
     icon: LayoutDashboard,
   },
   {
-    title: "Danh sách học việc",
+    title: "Danh sách nhân viên học việc",
     href: "/trainees",
     icon: Users,
   },
@@ -30,9 +31,15 @@ const menuItems = [
 
 export function Sidebar() {
   const pathname = usePathname()
+  const { isOpen } = useSidebar()
 
   return (
-    <aside className="fixed left-0 top-16 z-40 h-[calc(100vh-4rem)] w-64 border-r bg-white">
+    <aside
+      className={cn(
+        "fixed left-0 top-16 z-40 h-[calc(100vh-4rem)] w-64 border-r bg-white transition-transform duration-300",
+        !isOpen && "-translate-x-full",
+      )}
+    >
       <nav className="flex flex-col gap-1 p-4">
         {menuItems.map((item) => {
           const Icon = item.icon

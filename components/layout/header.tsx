@@ -1,11 +1,14 @@
 "use client"
 
-import { Bell, Search, User } from "lucide-react"
+import { Bell, Search, User, Menu } from "lucide-react"
+import { useSidebar } from "@/lib/sidebar-context"
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 
 export function Header() {
+  const { toggle } = useSidebar()
+
   return (
     <header className="sticky top-0 z-50 w-full overflow-hidden bg-gradient-to-r from-[#2c86ff] via-[#3b94ff] to-[#2c86ff] shadow-lg">
       {/* Decorative curved shapes */}
@@ -34,10 +37,14 @@ export function Header() {
       </div>
 
       <div className="relative flex h-16 items-center gap-4 px-6">
+        <Button variant="ghost" size="icon" onClick={toggle} className="hover:bg-white/20" aria-label="Toggle sidebar">
+          <Menu className="h-5 w-5 text-white" />
+        </Button>
+
         {/* Logo and title */}
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-md">
-            <img src={"https://cehsoft.com/wp-content/uploads/2025/08/logo-ceh-new1.svg"} />
+            <img src={"https://cehsoft.com/wp-content/uploads/2025/08/logo-ceh-new1.svg"} className="h-6 w-6 text-[#2c86ff]" />
           </div>
           <h1 className="text-xl font-bold text-white drop-shadow-sm">Thống Kê & Đánh Giá Nhân Viên Học Việc</h1>
         </div>

@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { DataProvider } from "@/lib/data-context"
+import { SidebarProvider } from "@/lib/sidebar-context"
 import { Toaster } from "@/components/ui/toaster"
 
 const geistSans = Geist({
@@ -18,7 +19,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Hệ thống đánh giá thực tập sinh",
   description: "Quản lý và đánh giá thực tập sinh",
-    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -29,10 +29,12 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
-        <DataProvider>
-          {children}
-          <Toaster />
-        </DataProvider>
+        <SidebarProvider>
+          <DataProvider>
+            {children}
+            <Toaster />
+          </DataProvider>
+        </SidebarProvider>
       </body>
     </html>
   )

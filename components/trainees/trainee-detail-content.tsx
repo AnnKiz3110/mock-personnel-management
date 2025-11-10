@@ -45,7 +45,7 @@ export function TraineeDetailContent({ traineeId }: TraineeDetailContentProps) {
         </Link>
         <span>/</span>
         <Link href="/trainees" className="hover:text-foreground">
-          Danh sách học việc
+          Danh sách nhân viên học việc
         </Link>
         <span>/</span>
         <span className="text-foreground font-medium">{trainee.fullName}</span>
