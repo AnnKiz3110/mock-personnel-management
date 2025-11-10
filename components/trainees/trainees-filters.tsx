@@ -21,7 +21,7 @@ export function TraineesFilters({ filters, onFiltersChange }: TraineesFiltersPro
         <SelectContent>
           <SelectItem value="all">Tất cả</SelectItem>
           <SelectItem value="Phát triển phần mềm">Phát triển phần mềm</SelectItem>
-          <SelectItem value="Thiết kế UI/UX">Thiết kế UI/UX</SelectItem>
+          <SelectItem value="Triển khai">Triển khai</SelectItem>
           <SelectItem value="Kinh doanh">Kinh doanh</SelectItem>
           <SelectItem value="Marketing">Marketing</SelectItem>
         </SelectContent>

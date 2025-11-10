@@ -19,7 +19,7 @@ interface TraineeFormDialogProps {
   mode: "add" | "edit"
 }
 
-const DEPARTMENTS = ["Phát triển phần mềm", "Thiết kế UI/UX", "Kinh doanh", "Marketing", "Nhân sự"]
+const DEPARTMENTS = ["Phát triển phần mềm", "Triển khai", "Kinh doanh", "Marketing", "Nhân sự"]
 const MENTORS = ["Trần Minh Hoàng", "Lê Thu Hà", "Nguyễn Văn Tùng", "Đặng Thị Lan", "Phạm Văn Nam"]
 const STATUSES: TraineeStatus[] = ["Đang học việc", "Hoàn thành", "Đề nghị thử việc", "Không đạt"]
 

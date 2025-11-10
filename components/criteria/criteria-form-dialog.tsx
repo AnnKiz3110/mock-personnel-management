@@ -20,7 +20,7 @@ interface CriteriaFormDialogProps {
   mode: "add" | "edit"
 }
 
-const DEPARTMENTS = ["Phát triển phần mềm", "Thiết kế UI/UX", "Kinh doanh", "Marketing", "Nhân sự"]
+const DEPARTMENTS = ["Phát triển phần mềm", "Triển khai", "Kinh doanh", "Marketing", "Nhân sự"]
 
 export function CriteriaFormDialog({ open, onOpenChange, preset, mode }: CriteriaFormDialogProps) {
   const { addCriteriaPreset, updateCriteriaPreset } = useData()

@@ -45,7 +45,7 @@ export function DashboardFilters({ filters, onFiltersChange }: DashboardFiltersP
         <SelectContent>
           <SelectItem value="all">Tất cả</SelectItem>
           <SelectItem value="dev">Phát triển phần mềm</SelectItem>
-          <SelectItem value="design">Thiết kế UI/UX</SelectItem>
+          <SelectItem value="design">Triển khai</SelectItem>
           <SelectItem value="sales">Kinh doanh</SelectItem>
           <SelectItem value="marketing">Marketing</SelectItem>
         </SelectContent>

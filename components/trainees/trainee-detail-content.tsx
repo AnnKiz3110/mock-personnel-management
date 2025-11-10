@@ -41,7 +41,7 @@ export function TraineeDetailContent({ traineeId }: TraineeDetailContentProps) {
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground">
-          Dashboard
+          Dashboardz
         </Link>
         <span>/</span>
         <Link href="/trainees" className="hover:text-foreground">
