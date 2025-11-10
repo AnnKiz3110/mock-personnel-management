@@ -40,10 +40,31 @@ const statusData = [
   { name: "Không đạt", value: 1, color: "#ef4444" },
 ]
 
+// Hàm hiển thị label bên ngoài Pie
+const renderCustomizedLabel = ({ cx, cy, midAngle, outerRadius, percent, name, value }: any) => {
+  const RADIAN = Math.PI / 180
+  const radius = outerRadius * 1.3
+  const x = cx + radius * Math.cos(-midAngle * RADIAN)
+  const y = cy + radius * Math.sin(-midAngle * RADIAN)
+
+  return (
+    <text
+      x={x}
+      y={y}
+      fill="#333"
+      textAnchor={x > cx ? "start" : "end"}
+      dominantBaseline="central"
+      fontSize={13}
+    >
+      {`${name}: ${value}`}
+    </text>
+  )
+}
+
 export function DashboardCharts() {
   return (
     <div className="grid gap-6 lg:grid-cols-2">
-      {/* Trend Chart */}
+      {/* Biểu đồ xu hướng */}
       <Card className="rounded-2xl border p-6 shadow-sm">
         <h3 className="mb-4 text-lg font-semibold text-balance">Xu hướng điểm trung bình</h3>
         <ResponsiveContainer width="100%" height={300}>
@@ -65,7 +86,7 @@ export function DashboardCharts() {
         </ResponsiveContainer>
       </Card>
 
-      {/* Department Bar Chart */}
+      {/* Biểu đồ phòng ban */}
       <Card className="rounded-2xl border p-6 shadow-sm">
         <h3 className="mb-4 text-lg font-semibold text-balance">Số lượng theo phòng ban</h3>
         <ResponsiveContainer width="100%" height={300}>
@@ -80,25 +101,27 @@ export function DashboardCharts() {
         </ResponsiveContainer>
       </Card>
 
-      {/* Status Pie Chart */}
+      {/* Biểu đồ trạng thái */}
       <Card className="rounded-2xl border p-6 shadow-sm lg:col-span-2">
         <h3 className="mb-4 text-lg font-semibold text-balance">Phân bố trạng thái</h3>
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height={350}>
           <PieChart>
             <Pie
               data={statusData}
               cx="50%"
               cy="50%"
-              labelLine={false}
               outerRadius={100}
               fill="#8884d8"
               dataKey="value"
+              label={renderCustomizedLabel}
+              labelLine={false}
             >
               {statusData.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={entry.color} />
               ))}
             </Pie>
             <Tooltip />
+            <Legend />
           </PieChart>
         </ResponsiveContainer>
       </Card>

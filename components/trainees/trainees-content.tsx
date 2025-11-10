@@ -29,7 +29,7 @@ export function TraineesContent() {
         </div>
         <Button className="bg-[#2c86ff] hover:bg-[#1568db]" onClick={() => setAddDialogOpen(true)}>
           <Plus className="mr-2 h-4 w-4" />
-          Thêm học việc
+          Thêm nhân viên học việc
         </Button>
       </div>
 
